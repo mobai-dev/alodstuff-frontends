@@ -1,12 +1,13 @@
-import TextEditor from './components/TextEditor/TextEditor';
-import ControlPane from './components/ControlPane/ControlPane';
+import SidelinePanel from './components/SidelinePanel/SidelinePanel';
+import TextEditorPage from './pages/TextEditorPage';
 
 function App() {
   return (
-    <div className='w-full h-full'>
-      <ControlPane/>
-      <TextEditor/>
+    <div className='flex gap-4 w-full h-full'>
+      <SidelinePanel />
+      <TextEditorPage />
     </div>
+    
   )
 }
 

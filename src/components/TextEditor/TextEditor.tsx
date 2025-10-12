@@ -15,7 +15,10 @@ function TextEditor() {
             "<-": "\u27F5",
             "->": "\u27F6",
             "<>": "\u27F7",
-            "!!": "\u2757"
+            "!!": "\u2757",
+            "(/)": "\u2705",
+            "(x)": "\u274c",
+            "(X)": "\u274c"
         }
 
         for(const [symbol, replacement] of Object.entries(replacements)) {
@@ -41,3 +44,5 @@ export default TextEditor;
 // font sizes
 
 // clear button, save button, save locally, import?
+
+// strg d - overwrite behaviour so that line is duplicated into next line 
