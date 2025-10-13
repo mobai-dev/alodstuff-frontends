@@ -7,5 +7,5 @@ export default function TextEditorPage() {
             <ControlPane/>
             <TextEditor/>
         </div>
-    );
+    ); 
 }

@@ -1,11 +1,7 @@
-import IconedButton from "../Button/IconedButton";
-
-function ControlPane() {
+export default function ControlPane() {
     return (
         <>
             <p>controlpane</p>
         </>
     )
 }
-
-export default ControlPane;

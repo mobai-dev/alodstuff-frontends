@@ -1,7 +1,7 @@
 import './TextEditor.css';
 import { useState } from 'react';
 
-function TextEditor() {
+export default function TextEditor() {
     const [text, setText] = useState("");
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -36,7 +36,6 @@ function TextEditor() {
             onChange={handleChange} />
     )
 }
-export default TextEditor;
 
 // TODO:
 // bold, italic, normal

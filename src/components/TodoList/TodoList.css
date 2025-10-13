@@ -1,0 +1,13 @@
+.todo-item {
+    border: 2px solid aliceblue;
+    border-radius: 20px;
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.priority {
+    padding: 12px;
+    width: 24px;
+    height: 24px;
+}
