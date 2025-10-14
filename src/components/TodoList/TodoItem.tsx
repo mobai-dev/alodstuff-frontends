@@ -1,16 +1,8 @@
-import { ArrowUpward, ArrowDownward, Remove, Warning, Edit, Delete, Check } from "@mui/icons-material";
+import { Edit, Delete, Check } from "@mui/icons-material";
 import { IconButton, TextField, Tooltip } from '@mui/material';
 import './TodoList.css'
 import { useState } from "react";
-
-const PriorityIcon = ({ level = 'medium' }) => {
-    switch (level) {
-        case "highest": return <Warning color="error" />;
-        case "high": return <ArrowUpward color="warning" />;
-        case "medium": return <Remove color="success" />;
-        case "low": return <ArrowDownward color="info" />;
-    }
-};
+import PriorityIcon from "./PriorityIcon";
 
 interface TodoItemProps {
     id: number;
@@ -31,7 +23,7 @@ export default function TodoItem({ id, description, priority, onDelete, onEdit }
 
     return (
         <li className="todo-item">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 gap-3 mb-3">
                 <input type="radio" />
                 <div className="priority flex items-center justify-center">
                     <PriorityIcon level={priority} />
@@ -60,8 +52,9 @@ export default function TodoItem({ id, description, priority, onDelete, onEdit }
             </div>
             {editMode ? (
                 <TextField
-                    id="outlined-basic"
-                    variant="outlined"
+                    id="standard-basic"
+                    variant="standard"
+                    label="Describe your Todo"
                     color="primary"
                     sx={{ input: { color: 'white' } }}
                     value={tempDescription}

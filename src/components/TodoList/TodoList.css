@@ -1,9 +1,19 @@
+@import "tailwindcss";
+
 .todo-item {
     border: 2px solid aliceblue;
     border-radius: 20px;
     list-style-type: none;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 10px 20px;
+}
+
+.todo-item > * {
+    width: 100%;
+}
+
+.todo-item label {
+    color: white;
 }
 
 .priority {
