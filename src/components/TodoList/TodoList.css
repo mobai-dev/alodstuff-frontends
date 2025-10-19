@@ -30,6 +30,20 @@
     height: 24px;
 }
 
+.creation-wizard {
+    border: 2px solid aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 .creation-wizard * {
     width: 100%;
+}
+.wizard-prio-wrapper {
+    width: auto;
+}
+#priority-select-label {
+    color: aliceblue;
 }

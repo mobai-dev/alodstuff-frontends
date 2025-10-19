@@ -20,18 +20,17 @@ export default function MenuButton() {
                 size="large"
                 onClick={handleClick}
                 color="primary"
-                id="demo-positioned-menu">
+                id="navigation-menu">
                 <AddCircleIcon />
             </IconButton>
             <Menu
-                id="demo-positioned-menu"
-                aria-labelledby="demo-positioned-button"
+                id="navigation-menu"
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
                 anchorOrigin={{
                 vertical: 'top',
-                horizontal: 'left',
+                horizontal: 'right',
                 }}
                 transformOrigin={{
                 vertical: 'top',

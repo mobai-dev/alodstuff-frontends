@@ -7,8 +7,8 @@ export default function SidelinePanel() {
     <>
       <div className="text-center">
         <Logo />
-        <hr className='mt-3 mb-3' />
         <MenuButton />
+        <hr className='mt-3 mb-3' />
       </div>
     </>
   )
