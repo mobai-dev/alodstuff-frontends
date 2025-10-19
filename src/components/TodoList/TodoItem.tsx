@@ -1,5 +1,5 @@
 import { Edit, Delete, Check } from "@mui/icons-material";
-import { IconButton, TextField, Tooltip } from '@mui/material';
+import { IconButton, TextField, Tooltip, Checkbox } from '@mui/material';
 import './TodoList.css'
 import { useState } from "react";
 import PriorityIcon from "./PriorityIcon";
@@ -26,18 +26,24 @@ export default function TodoItem({ id, description, priority, completed = false,
     return (
         <li className="todo-item">
             <div className="flex items-center space-x-2 gap-3 mb-3">
-                <input 
-                    type="radio" 
-                    onClick={onComplete} 
-                    disabled={completed} />
+                <Checkbox
+                    onClick={onComplete}
+                    disabled={completed}
+                    checked={completed}
+                    sx={{
+                        color: "aliceblue",
+                        '&.Mui-checked': {
+                            color: "green",
+                        },
+                    }} />
                 <div className="priority flex items-center justify-center">
                     <PriorityIcon level={priority} />
                 </div>
                 {editMode ? (
                     <Tooltip title="Save">
-                        <IconButton 
-                            size="large" 
-                            color="success" 
+                        <IconButton
+                            size="large"
+                            color="success"
                             onClick={handleSave}
                             disabled={completed}>
                             <Check />
@@ -45,9 +51,9 @@ export default function TodoItem({ id, description, priority, completed = false,
                     </Tooltip>
                 ) : (
                     <Tooltip title="Edit">
-                        <IconButton 
-                            size="large" 
-                            color="primary" 
+                        <IconButton
+                            size="large"
+                            color="primary"
                             onClick={() => setEditMode(true)}
                             disabled={completed}>
                             <Edit />

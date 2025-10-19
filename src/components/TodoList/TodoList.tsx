@@ -94,27 +94,33 @@ export default function TodoList() {
                 </div>
             </div>
             <hr />
-            <p>Open</p>
-            <ul className='p-0'>
-                {todoList.map((todo) => (
-                    <TodoItem
-                        key={todo.id} {...todo}
-                        onDelete={() => deleteItem(todo.id)}
-                        onComplete={() => completeItem(todo.id)} />
-                ))}
-            </ul>
-            <hr />
-            <p>Done</p>
-            <ul className='p-0'>
-                {completedList.map((todo) => (
-                    <TodoItem
-                        key={todo.id} {...todo}
-                        onDelete={() => deleteItem(todo.id)}
-                        onComplete={() => completeItem(todo.id)}
-                        completed={true}
-                    />
-                ))}
-            </ul>
+            <div className="flex flex-row gap-8 w-full">
+                <div className="flex-1">
+                    <h2 className="font-bold mb-2">Open</h2>
+                    <ul className='p-0'>
+                        {todoList.map((todo) => (
+                            <TodoItem
+                                key={todo.id} {...todo}
+                                onDelete={() => deleteItem(todo.id)}
+                                onComplete={() => completeItem(todo.id)} />
+                        ))}
+                    </ul>
+                </div>
+
+                <div className="flex-1">
+                    <h2 className="font-bold mb-2">Done</h2>
+                    <ul className='p-0'>
+                        {completedList.map((todo) => (
+                            <TodoItem
+                                key={todo.id} {...todo}
+                                onDelete={() => deleteItem(todo.id)}
+                                onComplete={() => completeItem(todo.id)}
+                                completed={true}
+                            />
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </div >
     );
 }
