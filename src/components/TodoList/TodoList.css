@@ -16,8 +16,20 @@
     color: white;
 }
 
+.todo-item--completed p {
+    color: green;
+}
+
+.todo-item--completed {
+    border-color: green;
+}
+
 .priority {
     padding: 12px;
     width: 24px;
     height: 24px;
+}
+
+.creation-wizard * {
+    width: 100%;
 }

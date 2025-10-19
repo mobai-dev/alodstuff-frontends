@@ -1,5 +1,5 @@
 import './SidelinePanel.css';
-import AddButton from '../Button/AddButton';
+import MenuButton from '../Button/MenuButton';
 import Logo from '../Logo/Logo';
 
 export default function SidelinePanel() {
@@ -8,7 +8,7 @@ export default function SidelinePanel() {
       <div className="text-center">
         <Logo />
         <hr className='mt-3 mb-3' />
-        <AddButton />
+        <MenuButton />
       </div>
     </>
   )

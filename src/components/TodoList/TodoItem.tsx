@@ -8,11 +8,13 @@ interface TodoItemProps {
     id: number;
     description: string;
     priority: string;
+    completed?: boolean;
     onDelete: () => void;
     onEdit?: (id: number, newDescription: string) => void;
+    onComplete: () => void;
 }
 
-export default function TodoItem({ id, description, priority, onDelete, onEdit }: TodoItemProps) {
+export default function TodoItem({ id, description, priority, completed = false, onDelete, onEdit, onComplete }: TodoItemProps) {
     const [editMode, setEditMode] = useState(false);
     const [tempDescription, setTempDescription] = useState(description);
 
@@ -24,19 +26,30 @@ export default function TodoItem({ id, description, priority, onDelete, onEdit }
     return (
         <li className="todo-item">
             <div className="flex items-center space-x-2 gap-3 mb-3">
-                <input type="radio" />
+                <input 
+                    type="radio" 
+                    onClick={onComplete} 
+                    disabled={completed} />
                 <div className="priority flex items-center justify-center">
                     <PriorityIcon level={priority} />
                 </div>
                 {editMode ? (
                     <Tooltip title="Save">
-                        <IconButton size="large" color="success" onClick={handleSave}>
+                        <IconButton 
+                            size="large" 
+                            color="success" 
+                            onClick={handleSave}
+                            disabled={completed}>
                             <Check />
                         </IconButton>
                     </Tooltip>
                 ) : (
                     <Tooltip title="Edit">
-                        <IconButton size="large" color="primary" onClick={() => setEditMode(true)}>
+                        <IconButton 
+                            size="large" 
+                            color="primary" 
+                            onClick={() => setEditMode(true)}
+                            disabled={completed}>
                             <Edit />
                         </IconButton>
                     </Tooltip>
@@ -45,7 +58,8 @@ export default function TodoItem({ id, description, priority, onDelete, onEdit }
                     <IconButton
                         size="large"
                         color="primary"
-                        onClick={onDelete}>
+                        onClick={onDelete}
+                        disabled={completed}>
                         <Delete />
                     </IconButton>
                 </Tooltip>
