@@ -1,14 +1,15 @@
 import TodoItem from './TodoItem'
 import { useState, ChangeEvent } from 'react'
 import { TextField, MenuItem, Select, FormControl, InputLabel, Tooltip, SelectChangeEvent } from '@mui/material';
-
+import { v7 as uuidv7 } from 'uuid';
 import './TodoList.css'
 import PriorityIcon from './PriorityIcon';
 
 type Todo = {
-    id: number;
+    id: string;
     description: string;
     priority: string;
+    // TODO: add content as json
 }
 
 export default function TodoList() {
@@ -18,16 +19,16 @@ export default function TodoList() {
     const [selectedPrio, setSelectedPrio] = useState("medium")
 
     const addItem = (description: string, priority: string) => {
-        const newTodo = { id: todoList.length + 1, description, priority };
+        const newTodo = { id: uuidv7(), description, priority };
         setTodoList([...todoList, newTodo]);
         setNewTodo("")
     }
 
-    const deleteItem = (id: number) => {
+    const deleteItem = (id: string) => {
         setTodoList((prev) => prev.filter((todo) => todo.id !== id));
     }
 
-    const completeItem = (id: number) => {
+    const completeItem = (id: string) => {
         const todoToComplete = todoList.find((todo) => todo.id === id);
         if (todoToComplete) {
             setCompletedList([...completedList, todoToComplete])

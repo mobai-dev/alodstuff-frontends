@@ -5,12 +5,12 @@ import { useState } from "react";
 import PriorityIcon from "./PriorityIcon";
 
 interface TodoItemProps {
-    id: number;
+    id: string;
     description: string;
     priority: string;
     completed?: boolean;
     onDelete: () => void;
-    onEdit?: (id: number, newDescription: string) => void;
+    onEdit?: (id: string, newDescription: string) => void;
     onComplete: () => void;
 }
 
