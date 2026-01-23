@@ -26,3 +26,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.logo {
+    width: 120px;
+}
