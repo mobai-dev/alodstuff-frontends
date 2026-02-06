@@ -1,7 +1,6 @@
 import TodoItem from './TodoItem'
-import { useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent, useId } from 'react'
 import { TextField, MenuItem, Select, FormControl, InputLabel, Tooltip, SelectChangeEvent } from '@mui/material';
-import { v7 as uuidv7 } from 'uuid';
 import './TodoList.css'
 import PriorityIcon from './PriorityIcon';
 
@@ -18,8 +17,10 @@ export default function TodoList() {
     const [newTodo, setNewTodo] = useState("");
     const [selectedPrio, setSelectedPrio] = useState("medium")
 
+    const id = useId();
+
     const addItem = (description: string, priority: string) => {
-        const newTodo = { id: uuidv7(), description, priority };
+        const newTodo = { id: id, description, priority };
         setTodoList([...todoList, newTodo]);
         setNewTodo("")
     }

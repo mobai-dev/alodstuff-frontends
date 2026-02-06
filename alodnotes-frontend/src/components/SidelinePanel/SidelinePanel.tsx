@@ -2,8 +2,7 @@ import './SidelinePanel.css';
 import MenuButton from '../Button/MenuButton';
 import img from '../../assets/alodnotes.svg';
 import Note from './Note';
-import { useState } from 'react';
-import { v7 as uuidv7 } from 'uuid';
+import { useId, useState } from 'react';
 
 type Note = {
   id: string;
@@ -18,8 +17,10 @@ export default function SidelinePanel() {
     { id: "testID2", title: "tesfosdjfoisdjfosdijfosdifjsdoifjsdoifjsdofijsdofijsdofijsdofijsdofijsdofijt", type: "text" }
   ]);
 
+  const id = useId();
+
   const addItem = (title: string, type: string) => {
-    const newItem = { id: uuidv7(), title, type };
+    const newItem = { id: id, title, type };
     setNoteList([...noteList, newItem]);
   }
 
@@ -30,9 +31,14 @@ export default function SidelinePanel() {
   return (
     <div className="text-center">
       <img src={img} className='logo mx-auto mb-3' alt='ALODnotes' />
-      <p>TODO: german/english</p>
-      <p>TODO: light/darkmode</p>
-      <p>TODO: login</p>
+      <div className='flex gap-2 my-3'>
+        <button>Lang</button>
+        <button>Mode</button>
+      </div>
+      <div className='flex flex-col gap-2 mb-3'>
+        <button>login</button>
+        <button>register</button>
+      </div>
       <hr className='mt-3 mb-3' />
       <MenuButton />
       <ul className='note-list'>

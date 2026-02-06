@@ -20,16 +20,17 @@ export default function Note ({ title, type, onDelete } : NoteProps) {
           <Tooltip title={title}>
             <p className='note-title'>{title}</p>
           </Tooltip>
-          <div><NoteIcon type={type}/></div>
-          <hr className='mt-2 mb-2' />
-          <Tooltip title="Delete this note.">
-            <IconButton
-              size="large"
-              color="primary"
-              onClick={onDelete}>
-                <Delete />
-            </IconButton>
-          </Tooltip>
+          <div className='flex justify-between items-center'>
+            <NoteIcon type={type}/>
+            <Tooltip title="Delete this note.">
+              <IconButton
+                size="large"
+                color="primary"
+                onClick={onDelete}>
+                  <Delete />
+              </IconButton>
+            </Tooltip>
+          </div>
         </div>
     </li>
   )
