@@ -1,7 +1,5 @@
 .idea
-
-#ALODnotes-Frontend
-alodnotes-frontend/node_modules
+*/node_modules
 
 # ALODstuff-Backend
 alodstuff-backend/.gradle

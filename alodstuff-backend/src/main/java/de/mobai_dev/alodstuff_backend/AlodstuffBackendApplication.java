@@ -10,4 +10,5 @@ public class AlodstuffBackendApplication {
 		SpringApplication.run(AlodstuffBackendApplication.class, args);
 	}
 
+
 }
