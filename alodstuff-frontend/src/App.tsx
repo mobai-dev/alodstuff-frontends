@@ -7,9 +7,11 @@ import Header from './components/Header'
 export default function App() {
 
   return (
-    <div className='flex flex-col gap-10 items-center justify-between w-full h-full'>
+    <div className="flex flex-col min-h-screen items-center p-3">
       <Header />
-      <ApplicationContainer />
+      <div className="flex-1 flex items-center justify-center">
+        <ApplicationContainer />
+      </div>
       <Footer />
     </div>
   )

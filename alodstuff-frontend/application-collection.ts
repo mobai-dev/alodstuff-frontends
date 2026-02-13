@@ -3,13 +3,13 @@ const applicationCollection = [
     title: 'ALODnotes',
     logo: '',
     altText: '',
-    url: ''
+    url: 'http://localhost:5174'
   },
   {
     title: 'dummy',
     logo: '',
     altText: '',
-    url: 'youtube.com'
+    url: 'https://youtube.com'
   }
 ];
 

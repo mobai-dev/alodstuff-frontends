@@ -6,7 +6,11 @@ export default function ApplicationContainer() {
 		<main>
 			<ol className="flex gap-10">
 				{applicationCollection.map((app) =>
-					<Application title={app.title} />
+					<Application 
+						title={app.title} 
+						url={app.url} 
+						logo={app.logo} 
+						altText={app.altText} />
 				)}
 			</ol>
 		</main>
