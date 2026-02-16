@@ -1,15 +1,15 @@
 const applicationCollection = [
   {
     title: 'ALODnotes',
-    logo: '',
-    altText: '',
+    logo: 'alodNotes',
+    altText: 'ALODnotes - Note App',
     url: 'http://localhost:5174'
   },
   {
     title: 'dummy',
     logo: '',
     altText: '',
-    url: 'https://youtube.com'
+    url: ''
   }
 ];
 

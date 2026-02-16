@@ -1,16 +1,3 @@
 .idea
-*/node_modules
-
-# ALODstuff-Backend
-alodstuff-backend/.gradle
-alodstuff-backend/build/
-!alodstuff-backend/gradle/wrapper/gradle-wrapper.jar
-!alodstuff-backend/**/src/main/**/build/
-!alodstuff-backend/**/src/test/**/build/
-alodstuff-backend/.idea
-alodstuff-backend/*.iws
-alodstuff-backend/*.iml
-alodstuff-backend/*.ipr
-alodstuff-backend/out/
-!alodstuff-backend/**/src/main/**/out/
-!alodstuff-backend/**/src/test/**/out/
+apps/*/node_modules
+node_modules
